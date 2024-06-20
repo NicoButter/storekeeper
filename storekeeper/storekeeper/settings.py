@@ -78,9 +78,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'storekeeper_db',
         'USER': 'postgres',
-	'PASSWORD': 'postgres010203',
-	'HOST': 'localhost',
-	'PORT'; '5432',
+	    'PASSWORD': 'postgres010203',
+	    'HOST': 'localhost',
+	    'PORT': '5432',
     }
 }
 
