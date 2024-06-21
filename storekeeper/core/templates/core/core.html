@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core App</title>
+    <link rel="stylesheet" href="{% static 'core_app/css/core_styles.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Header con herramientas según el rol del usuario -->
+        <nav>
+            <ul>
+                {% if user.role == 'gerente' %}
+                <li><a href="{% url 'gerente_tool1' %}">Tool 1</a></li>
+                <li><a href="{% url 'gerente_tool2' %}">Tool 2</a></li>
+            {% elif user.role == 'jefe_tecnico' %}
+                <li><a href="{% url 'jefe_tecnico_tool1' %}">Tool 1</a></li>
+                <li><a href="{% url 'jefe_tecnico_tool2' %}">Tool 2</a></li>
+            {% elif user.role == 'tecnico_senior' %}
+                <li><a href="{% url 'tecnico_senior_tool1' %}">Tool 1</a></li>
+                <li><a href="{% url 'tecnico_senior_tool2' %}">Tool 2</a></li>
+            {% elif user.role == 'tecnico_jr1' %}
+                <li><a href="{% url 'tecnico_jr1_tool1' %}">Tool 1</a></li>
+                <li><a href="{% url 'tecnico_jr1_tool2' %}">Tool 2</a></li>
+            {% elif user.role == 'tecnico_jr2' %}
+                <li><a href="{% url 'tecnico_jr2_tool1' %}">Tool 1</a></li>
+                <li><a href="{% url 'tecnico_jr2_tool2' %}">Tool 2</a></li>
+            {% elif user.role == 'gerente_tecnico' %}
+                <li><a href="{% url 'gerente_tecnico_tool1' %}">Tool 1</a></li>
+                <li><a href="{% url 'gerente_tecnico_tool2' %}">Tool 2</a></li>
+            {% elif user.role == 'jefe_de_deposito' %}
+                <li><a href="{% url 'jefe_de_deposito_tool1' %}">Tool 1</a></li>
+                <li><a href="{% url 'jefe_de_deposito_tool2' %}">Tool 2</a></li>
+            {% elif user.role == 'tecnico_deposito' %}
+                <li><a href="{% url 'tecnico_deposito_tool1' %}">Tool 1</a></li>
+                <li><a href="{% url 'tecnico_deposito_tool2' %}">Tool 2</a></li>
+            {% elif user.role == 'operario_deposito' %}
+                <li><a href="{% url 'operario_deposito_tool1' %}">Tool 1</a></li>
+                <li><a href="{% url 'operario_deposito_tool2' %}">Tool 2</a></li>
+            {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Contenido central que cambia según la herramienta seleccionada -->
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <!-- Footer con información -->
+        <p>&copy; 2023 Core App</p>
+    </footer>
+</body>
+</html>

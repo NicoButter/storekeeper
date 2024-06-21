@@ -19,6 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),  # URLs de django-allauth
-    path('', include('login_app.urls')),  # Incluye las URLs de tu aplicación
+    path('accounts/', include('allauth.urls')),  
+    path('', include('login_app.urls')),
+    path('core/', include('core.urls'))
+      
 ]
