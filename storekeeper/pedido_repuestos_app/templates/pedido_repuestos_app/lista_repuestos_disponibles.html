@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Lista de Repuestos Disponibles</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Marca</th>
+                <th>Número de Parte</th>
+                <th>Número de Serie</th>
+                <th>Detalle</th>
+                <th>QR</th>
+                <th>Fecha de Ingreso</th>
+                <th>Costo Unitario</th>
+                <th>Cantidad Disponible</th>
+                <th>Pedir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for repuesto in repuestos %}
+                <tr>
+                    <td>{{ repuesto.tipo }}</td>
+                    <td>{{ repuesto.marca }}</td>
+                    <td>{{ repuesto.numero_parte }}</td>
+                    <td>{{ repuesto.numero_serie }}</td>
+                    <td>{{ repuesto.detalle }}</td>
+                    <td>{{ repuesto.qr }}</td>
+                    <td>{{ repuesto.fecha_ingreso }}</td>
+                    <td>{{ repuesto.costo_unitario }}</td>
+                    <td>{{ repuesto.cantidad_disponible }}</td>
+                    <td>
+                        <a href="{% url 'pedido_repuesto_crear' repuesto.id %}">Pedir</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

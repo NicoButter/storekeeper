@@ -37,12 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',  # Asegúrate de tener 'django.contrib.sites' también
+    'django.contrib.sites',  
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'login_app',
-    'core'
+    'core',
+    'deposito_app',
+    'cargar_repuesto_app',
+    'pedido_repuestos_app'
 ]
 
 AUTH_USER_MODEL = 'login_app.CustomUser'

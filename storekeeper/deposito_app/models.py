@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from.models import Repuesto
+from cargar_repuesto_app.models import Repuesto  # Import from cargar_repuesto_app
 
 def lista_repuestos(request):
     repuestos = Repuesto.objects.all()
