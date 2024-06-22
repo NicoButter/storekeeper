@@ -22,6 +22,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),  
     path('', include('login_app.urls')),
     path('core/', include('core.urls')),
-    path('deposito/', include('deposito.urls')),
-    path('pedido_repuesto/', include('pedido_repuesto.urls'))
+    path('deposito/', include('deposito_app.urls')),
+    path('pedido_repuestos/', include('pedido_repuestos_app.urls')),
+    path('cargar_repuesto/', include('cargar_repuesto_app.urls'))
 ]

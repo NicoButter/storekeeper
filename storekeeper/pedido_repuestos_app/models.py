@@ -1,6 +1,5 @@
 from django.db import models
-from deposito.models import Repuesto
-
+from deposito_app.models import Repuesto 
 class PedidoRepuesto(models.Model):
     jefe_tecnico = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     repuesto = models.ForeignKey(Repuesto, on_delete=models.CASCADE)
@@ -11,3 +10,4 @@ class PedidoRepuesto(models.Model):
         ('aprobado', 'Aprobado'),
         ('rechazado', 'Rechazado')
     ])
+    
