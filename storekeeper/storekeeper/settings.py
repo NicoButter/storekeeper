@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login_app'
+    'login_app',
+    'core_app'
 ]
 
 MIDDLEWARE = [
@@ -80,8 +81,12 @@ WSGI_APPLICATION = 'storekeeper.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'storekeeper_db',
+        'USER': 'postgres',  # reemplaza con tu usuario de PostgreSQL
+        'PASSWORD': 'postgres010203',  # reemplaza con tu contraseña de PostgreSQL
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

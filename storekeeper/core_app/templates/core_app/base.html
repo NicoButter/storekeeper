@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Core App</title>
+</head>
+<body>
+    <header>
+        <!-- Header content -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Core App</a>
+            <!-- Links to other apps -->
+        </nav>
+    </header>
+    <main>
+        <!-- This will be replaced by the app content -->
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <!-- Footer content -->
+        <p>&copy; {{ year }} - {{ hour }}</p>
+    </footer>
+</body>
+</html>
