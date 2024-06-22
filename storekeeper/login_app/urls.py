@@ -1,7 +1,7 @@
 from django.urls import path
-from.templates.login_app import views
+from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('login/', views.login_view, name='login'),
+    # path('', views.home, name='home'),
+    path('', views.login_view, name='login')
 ]
