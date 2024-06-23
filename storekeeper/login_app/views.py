@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from .forms import LoginForm
+from .forms import CustomUserCreationForm
 from django.contrib.auth import authenticate, login
 
 def login_view(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
@@ -16,5 +16,5 @@ def login_view(request):
                 error = 'Credenciales incorrectas'
                 return render(request, 'login.html', {'form': form, 'error': error})
     else:
-        form = LoginForm()
+        form = CustomUserCreationForm()
     return render(request, 'login.html', {'form': form})
